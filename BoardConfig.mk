@@ -20,3 +20,7 @@ include device/bq/sdm660-common/BoardConfigCommon.mk
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 TARGET_KERNEL_CONFIG := maru_zangya_defconfig
+
+ifneq ($(TARGET_BUILD_VARIANT),user)
+	SELINUX_IGNORE_NEVERALLOWS := true
+endif
